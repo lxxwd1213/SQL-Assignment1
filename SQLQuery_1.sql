@@ -28,7 +28,7 @@ from Production.Product
 where Color IS NOT NULL;
 
 --7
-select Top 6 Name, Color
+select Top (6) 'NAME:' + Name + ' -- COLOR:' + Color
 from Production.Product
 where Color IS NOT NULL;
 
@@ -40,10 +40,11 @@ where ProductID between 400 and 500;
 --9
 select ProductID, Name, Color
 from Production.Product
-where Color = 'black' or Color = 'blue';
+--where Color = 'black' or Color = 'blue';
+where  Color in ('black', 'blue')
 
 --10
-select *
+select Name
 from Production.Product
 where Name like 'S%';
 
